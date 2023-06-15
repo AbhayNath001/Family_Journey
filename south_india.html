@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>saver</title>
+		<link rel="shortcut icon" type="image/png"
+            href="my.jpg">	<!-- for logo -->
+        <link rel="stylesheet" href="south_india.css">
+    </head>
+	<body>
+		<header class="header">
+			<a href="#" class="logo"><span style="color:#0ef">S</span>outh <span style="color:#0ef">I</span>ndia</a>
+			<i class="bx bx-menu" id="menu-icon"></i>
+			<nav class="navbar">
+				<a href="#pictures" class="active">Pictures</a>
+				<a href="#videoes">Videoes</a>
+			</nav>
+		</header>
+		<section class="pictures" id="pictures">
+		<div class="container">
+			<div class="div-1">
+				<img src="Abhay.jpg" alt="404 Error">
+			</div>
+			<div class="div-2">
+				<img src="Abhay with Shiv.jpg" alt="404 Error">
+			</div>
+			<div class="div-3">
+				<img src="Abhay with Shiv.jpg" alt="404 Error">
+			</div>
+			<div class="div-4">
+				<img src="Abhay with Shiv.jpg" alt="404 Error">
+			</div>
+		</div>
+		</section>
+
+	<div id="fullscreen">
+		<img id="fullscreen-img" src="" alt="">
+		<div class="arrow left-arrow">&#8249;</div>
+		<div class="arrow right-arrow">&#8250;</div>
+	</div>
+<!-- ---------------------------------------------------------javascript-------------------------------------------------- -->
+	<script>
+		// Get all the images
+		const images = document.querySelectorAll('.container img');
+		// Get the fullscreen container
+		const fullscreenContainer = document.getElementById('fullscreen');
+		// Get the fullscreen image element
+		const fullscreenImage = document.getElementById('fullscreen-img');
+		// Get the left and right arrow buttons
+		const leftArrow = document.querySelector('.left-arrow');
+		const rightArrow = document.querySelector('.right-arrow');
+
+		let currentIndex = 0; // Current index of the displayed image
+
+		// Function to show the fullscreen image
+		const showFullscreenImage = (index) => {
+			currentIndex = index;
+			fullscreenImage.src = images[index].src;
+			fullscreenContainer.style.display = 'flex';
+		};
+
+		// Add click event listener to each image
+		images.forEach((image, index) => {
+			image.addEventListener('click', () => {
+				showFullscreenImage(index);
+			});
+		});
+
+		// Close the fullscreen image when clicked outside the image
+		fullscreenContainer.addEventListener('click', (event) => {
+			if (event.target === fullscreenContainer) {
+				fullscreenContainer.style.display = 'none';
+			}
+		});
+
+		// Add click event listeners to arrow buttons
+		leftArrow.addEventListener('click', () => {
+			if (currentIndex > 0) {
+				showFullscreenImage(currentIndex - 1); // Show previous image
+			}
+		});
+
+		rightArrow.addEventListener('click', () => {
+			if (currentIndex < images.length - 1) {
+				showFullscreenImage(currentIndex + 1); // Show next image
+			}
+		});
+	</script>
+	<!-- -------------------------------------------------videoes---------------------------------------------- -->
+	<section class="videoes" id="videoes">
+		<video width="320" height="240" controls>
+			<source src="D:/project-1/south india video/MOV00042.avi" type="video/avi">
+			<source src="movie.ogg" type="video/ogg">
+			Your browser does not support the video tag.
+		</video>
+	</section>
+	</body>
+</html>

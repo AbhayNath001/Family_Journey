@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	border: none;
+	outline: none;
+	scroll-behavior: smooth;
+	font-family: 'Popins', sans-serif;
+}
+html {
+	font-size: 1rem;
+	over-flow-x: hidden;
+}
+body {
+	background: #1f242d;
+	color: #0ef;
+}
+section {
+	min-height: 100vh;
+	padding: 10rem 9% 2rem;
+}
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 1rem 9%;
+	background: #1f242d;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 0 .2rem 0;
+	animation: changeColor 5s linear infinite;
+	z-index: 100;
+}
+@keyframes changeColor {
+  0% {
+    color: #0ef;
+  }
+  25% {
+    color: #FF006F;
+  }
+  50% {
+    color: #32CD32;
+  }
+  75% {
+    color: #00BFFF;
+  }
+  100% {
+    color: #0ef;
+  }
+}
+.header.sticky {
+	border-bottom: .1rem solid rgba(0, 0, 0, .2);
+}
+.header a {
+	color: white;
+	padding-right: 25px;
+	font-size: 1.2rem;
+}
+.container {
+  display: flex;
+}
+.div-1,
+.div-2,
+.div-3,
+.div-4 {
+	/* background: linear-gradient(315deg, #6f04d9, #8a045c); */
+	/* width: 12rem; */
+	/* height: 13rem; */
+	/* border-radius: 15px; */
+	/* margin-right: 90px; */
+	/* border-style: solid; */
+	/* border-color: aqua; */
+}
+
+		.container {
+			display: flex;
+		}
+		.container div {
+			margin: 5px;
+		}
+		.container img {
+			width: 170px;
+			height: 140px;
+			cursor: pointer;
+			border-radius: 12px;
+		}
+		#fullscreen {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0, 0, 0, 0.9);
+			display: none;
+			justify-content: center;
+			align-items: center;
+			z-index: 9999;
+		}
+		#fullscreen img {
+			max-width: 95%;
+			max-height: 95%;
+		}
+		.arrow {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 50px;
+			height: 50px;
+			background-color: rgba(0, 0, 0, 0.5);
+			color: #fff;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			opacity: 0.7;
+			transition: opacity 0.3s;
+		}
+		.arrow:hover {
+			opacity: 1;
+		}
+		.left-arrow {
+			left: 10px;
+		}
+		.right-arrow {
+			right: 10px;
+		}
